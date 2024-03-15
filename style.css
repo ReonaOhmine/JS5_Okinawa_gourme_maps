@@ -1,0 +1,94 @@
+/* 基本のリセットとフォント設定 */
+html,
+body {
+    font-family: "Mochiy Pop One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    overflow: auto;
+}
+
+/* ヘッダーのスタイル */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    margin: 0;
+    padding: 12px 16px;
+    background-color: #0085A1;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+}
+
+
+img {
+    height: 60%;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.Message {
+    text-align: center;
+}
+
+footer {
+    margin: 0;
+    height: 50px;
+    background-color: #0085A1;
+    text-align: end;
+}
+
+audio {
+    opacity: 20%;
+}
+
+
+/* マップ*/
+#myMap {
+    margin: 0 auto;
+    height: 800px;
+    width: 60%;
+    animation: rubberBand 1s ease-in-out;
+}
+
+@keyframes rubberBand {
+    0% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scaleX(1.25) scaleY(0.75);
+    }
+    40% {
+        transform: scaleX(0.75) scaleY(1.25);
+    }
+    60% {
+        transform: scaleX(1.15) scaleY(0.85);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.infobox {
+    border: 2px solid #0085A1;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    max-width: 320px;
+}
+
+.infobox img {
+    width: 100%;
+    height: auto;
+    margin-top: 8px;
+}
+
+.infobox h2 {
+    font-size: 18px;
+    margin-top: 0;
+    color: #0085A1;
+}

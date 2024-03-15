@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>沖縄⚾キャンプ飯</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>沖縄⚾キャンプ飯</h1>
+ <img src="./img/main.png" alt="" >
+<p class="Message">
+せっかく沖縄にプロ野球キャンプに来たのなら、<br>
+地元の沖縄グルメも楽しもう！！<br>
+旅行雑誌に載ってない、地元民おすすめのお店を紹介するよ♪
+</p>
+<!-- MAP[START] -->
+<div id="myMap"></div>
+<!-- MAP[END] -->
+
+<footer>
+<audio controls autoplay loop src="/music/okinawamusic.mp3"></audio>
+</footer>
+
+<script src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[APIキーは削除]' async defer></script>
+<script src="BmapQuery.js"></script>
+<script>
+//****************************************************************************************
+// BingMaps&BmapQuery
+//****************************************************************************************
+
+//Initialization processing
+let map;
+function GetMap() {
+    map = new Microsoft.Maps.Map('#myMap', {
+        center: new Microsoft.Maps.Location(26.2123, 127.6791), //Location center position
+        mapTypeId: Microsoft.Maps.MapTypeId.load, //aerial,canvasDark,canvasLight,birdseye,grayscale,streetside
+        zoom: 12  //Zoom:1=zoomOut ~ 20=zoomUp
+    });
+}
+         
+//Init
+function GetMap(){
+
+    //------------------------------------------------------------------------
+    //1. Instance
+    //------------------------------------------------------------------------
+    const map = new Bmap("#myMap");
+
+    //------------------------------------------------------------------------
+    //2. Display Map
+    //------------------------------------------------------------------------
+    map.startMap(26.4562, 127.9258, "load", 10);
+
+    //------------------------------------------------------------------------
+    //ピンを置く
+    //------------------------------------------------------------------------
+
+    let pin1 = map.pinIcon(26.20368282154751, 127.67304043036756, "img/giants.png", 0.035, 0, 0);
+    let pin2 = map.pinIcon(26.25147615654935, 127.7245013535725, "img/swallows.png", 0.15, 0, 0);
+    let pin3 = map.pinIcon(26.33266451916193, 127.79033001140571, "img/carp.png", 0.11, 0, 0);
+    let pin4 = map.pinIcon(26.282570328980118, 127.73738176722225, "img/baystars.png", 0.13, 0, 0);
+    let pin5 = map.pinIcon(26.484521426266205, 127.9732162402474, "img/tigers.png", 0.04, 0, 0);
+    let pin6 = map.pinIcon(26.46249907653205, 127.94172539791923, "img/eagles.png", 0.17, 0, 0);
+    let pin7 = map.pinIcon(26.31192779152732, 127.75849212726135, "img/chunich.png", 0.045, 0, 0);
+    let pin8 = map.pinIcon(26.59294471657435, 127.96676612305151, "img/nichihamu.png", 0.045, 0, 0);
+    
+    //----------------------------------------------------
+    //3. Infobox
+    //   options = new Array();
+    //   options[index] = { lat, lon, width, height, title, pinColor, description };
+    //----------------------------------------------------
+    const options = [];
+    options[0]={
+        "lat":26.256096823391797,
+        "lon":127.72236680629494,
+        "title":"高江洲そば",
+        "pinColor":"#ff0000",
+        "height":300,
+        "width":320,
+        "description": 'ゆし豆腐そばが美味しい！！13時には完売しちゃうのでお早めに。<br><img src="img/yushidohusoba.png" width="300">',
+        "show":false
+    };
+    options[1]={
+        "lat":26.289292636708772,
+        "lon":127.75622952473809,
+        "title":"メキシコ",
+        "pinColor":"#ff0000",
+        "height":300,
+        "width":320,
+        "description": '"沖縄一美味しいタコス"で有名！テイクアウトしてドライブもいいね！<br><img src="img/mexico.png" width="300">',
+        "show":false
+    };
+    options[2]={
+        "lat":26.597997426104655,
+        "lon":127.96356661326777,
+        "title":"パイ工房 おしゃれ",
+        "pinColor":"#ff0000",
+        "height":300,
+        "width":320,
+        "description": '店内には21種類のパイが。しかも1個55円！<br><img src="img/osyare.png"  width="300">',
+        "show":false
+    };
+
+    options[3]={
+        "lat":26.59476401018745,
+        "lon":127.97711707238165,
+        "title":"松の古民家",
+        "pinColor":"#ff0000",
+        "height":300,
+        "width":320,
+        "description": '予約必須！古民家で最高においしいアグー豚しゃぶしゃぶを食べれる！<br><img src="img/matsunokominka.png" width="300">',
+        "show":false
+    };
+
+    options[4]={
+        "lat":26.453587497646502,
+        "lon":127.91734662675525,
+        "title":"キングタコス",
+        "pinColor":"#ff0000",
+        "height":300,
+        "width":320,
+        "description": '言わずと知れたキングオブタコライス。ボリューム満点、テイクアウトでもok！<br><img src="img/kingtacos.png" width="300">',
+        "show":false
+    };
+
+    options[5]={
+        "lat":26.362866550872553,
+        "lon":127.8132152383889,
+        "title":"つけめん ジンベエ",
+        "pinColor":"#ff0000",
+        "height":300,
+        "width":320,
+        "description": '沖縄で食べられる濃厚つけ麺。沖縄そばのアクセントにぜひ<br><img src="img/jinbei.png" width="300">',
+        "show":false
+    };
+
+    
+
+    options[6]={
+        "lat":26.48394302708769, 
+        "lon":127.98510508072032,
+        "title":"車えびレストラン 球屋",
+        "pinColor":"#ff0000",
+        "height":300,
+        "width":320,
+        "description": '実は、沖縄、車海老の養殖量日本一。沖縄の車海老を堪能あれ<br><img src="img/kurumaebi.png" width="300">',
+        "show":false
+    };
+
+
+    options[7]={
+        "lat":26.400035846847214,
+        "lon":127.75798207489255,
+        "title":"番所亭",
+        "pinColor":"#ff0000",
+        "height":300,
+        "width":320,
+        "description": 'そばはもちろん、特性味噌ダレのソーキ丼は絶品！<br><img src="img/banjutei.png" width="300">',
+        "show":false
+    };
+
+
+    options[8]={
+        "lat":26.216521333904534,
+        "lon":127.68046465609463,
+        "title":"肉の変態集団 疾風ホルモン",
+        "pinColor":"#ff0000",
+        "height":300,
+        "width":320,
+        "description": 'プロ野球選手御用達。運が良ければ会えるかも？おすすめは会長コース<br><img src="img/shippu.png" width="300">',
+        "show":false
+    };
+
+
+    options[9]={
+        "lat":26.127564098814986, 
+        "lon":127.73700624599242,
+        "title":"沖縄そばと茶処 屋宜家",
+        "pinColor":"#ff0000",
+        "height":300,
+        "width":320,
+        "description": '沖縄県の有形文化財に登録されている茶処。アーサそばが有名<br><img src="img/yagiya.png" width="300">',
+        "show":false
+    };
+
+
+    options[10]={
+        "lat":26.216705406224285,
+        "lon":127.69006912303846,
+        "title":"青島食堂",
+        "pinColor":"#ff0000",
+        "height":300,
+        "width":320,
+        "description": 'モチモチの皮に包まれた水餃子が美味しい。ビールが進む！<br><img src="img/chintao.png" width="300">',
+        "show":false
+    };
+
+    
+    //----------------------------------------------------
+    //4. Switch infoboxs
+    //   infoboxLayers(options, true); //true=one, false=Multiple
+    //----------------------------------------------------
+    map.infoboxLayers(options,true);
+
+}
+</script>
+
+</body>
+</html>
